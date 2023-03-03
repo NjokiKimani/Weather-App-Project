@@ -54,8 +54,8 @@ function formatTime() {
   let date = new Date();
   let hour = date.getHours();
   let minutes = date.getMinutes();
-  if (minutes < 10) {
-    return `${hour}:0${minutes}`;
+  if (minutes < 10 && hour <10) {
+    return `0${hour}:0${minutes}`;
   } else {
     return `${hour}:${minutes}`;
   }

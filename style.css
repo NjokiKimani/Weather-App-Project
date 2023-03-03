@@ -6,6 +6,7 @@
     resize: none;
     background-color: #f4f5fc;
     color: #5f7189;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .header, .subHeader, .main{
@@ -64,8 +65,9 @@ justify-content: space-between;
 .col-2{
     display: grid;
     border:0.5px solid #e7e8f2;
+        box-shadow: 0px 0px 20px #c4c5c9;
+opacity: 0.9;
     text-align: center;
-
 border-radius: 10px;
     background-color: #e7e8f2;
     row-gap: 2px;
@@ -86,8 +88,6 @@ border-radius: 10px;
 .conditionsContainer{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-left: 5px;
-    margin-right: 5px;
     margin-top: 5px;
     row-gap: 10px;
     column-gap: 10px;
@@ -95,9 +95,18 @@ border-radius: 10px;
 .feel, .wind, .humidity, .uvIndex{
     border:0.5px solid #e7e8f2;
     border-radius:5px;
+    width: 100px;
+    margin: 0 auto;
     text-align: center;
         background-color: #e7e8f2;
-        font-weight: 500;
+        font-weight: 550;
+        font-size: 15px;
+}
+.feel, .humidity{
+    margin-right: 5px;
+}
+.wind, .uvIndex{
+    margin-left: 5PX;
 }
 .feelValue, .windValue, .humidityValue, .uvValue{
     font-size: 14px;
@@ -108,7 +117,13 @@ border-radius: 10px;
     position: relative;
     text-align: right;
 }
-.textLink{
+.textLink, .gitLink{
         color: #6284b2;
-
+}
+.openSource{
+    width: 350px;
+    text-align: start;
+        margin-left: 419.5px;
+    margin-top: 5px;
+    font-size: 14px;
 }
