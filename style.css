@@ -7,7 +7,7 @@
     color: #5f7189;
 }
 
-.header, .main{
+.header, .subHeader, .main{
     text-align: center;
 }
 .date{
@@ -21,7 +21,7 @@
     margin-top: 50px;
     margin-bottom:30px;
 }
-#searchForm, #submitBtn{
+#searchInput, #submitBtn{
        border: 0.5px solid #f4f5fc;
     border-radius: 10px;
     text-align: center;
@@ -40,6 +40,9 @@
 }
 .temperature{
     font-size:45px;
+}
+.description{
+    text-transform: capitalize;
 }
 .description, .maxTemperature, .minTemperature{
     font-size: 18px;
