@@ -21,7 +21,7 @@ function showTemperature(response) {
   let humidityElement = document.querySelector(".humidityValue");
   humidityElement.innerHTML = Math.round(response.data.main.humidity) + "%";
   let windElement = document.querySelector(".windValue");
-  windElement.innerHTML = Math.round(response.data.wind.speed) + " km/h";
+  windElement.innerHTML = Math.round(response.data.wind.speed) + " mph";
 
   getForecast(response.data.coord);
 }
