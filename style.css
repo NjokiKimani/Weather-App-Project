@@ -2,7 +2,8 @@
     border: 0.5px solid #f4f5fc;
     border-radius: 10px;
     margin-top: 30px;
-    width: 40%;
+    width: 350px;
+    resize: none;
     background-color: #f4f5fc;
     color: #5f7189;
 }
@@ -19,13 +20,16 @@
 }
 .subHeader{
     margin-top: 50px;
-    margin-bottom:30px;
+    margin-bottom:20px;
 }
 #searchInput, #submitBtn{
        border: 0.5px solid #f4f5fc;
     border-radius: 10px;
     text-align: center;
+    box-shadow: 0px 0px 15px #cfd0db ;
+    outline: none;
 }
+
 #submitBtn{
         transform: rotate(270deg);
         height: 50px;
@@ -47,26 +51,57 @@
 .description, .maxTemperature, .minTemperature{
     font-size: 18px;
 }
-.weekContents{
-padding: 0;
-border:0.5px solid #e7e8f2;
+.dailyTemperatures{
+    margin-top: 20px;
+}
+.row{
+justify-content: space-between; 
+   margin-left: 0px;
+    margin-right: 0px;
+    text-align: center;
+
+}
+.col-2{
+    display: grid;
+    border:0.5px solid #e7e8f2;
+    text-align: center;
+
 border-radius: 10px;
-background-color:#e7e8f2;
-text-align: center;
+    background-color: #e7e8f2;
+    row-gap: 2px;
+    
+}
+.weekTemperature{
+    font-weight: 600;
+}
+.maxDayTemperature, .minDayTemperature{
+    font-size: 12px;
+}
+.otherConditions{
+    margin-top: 20px;
+}
+.otherTag{
+    font-size: 15px;
 }
 .conditionsContainer{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-left: 5px;
     margin-right: 5px;
+    margin-top: 5px;
     row-gap: 10px;
     column-gap: 10px;
 }
-.feel, .wind, .humidity, .wind{
+.feel, .wind, .humidity, .uvIndex{
     border:0.5px solid #e7e8f2;
     border-radius:5px;
     text-align: center;
-    background-color: #e7e8f2;
+        background-color: #e7e8f2;
+        font-weight: 500;
+}
+.feelValue, .windValue, .humidityValue, .uvValue{
+    font-size: 14px;
+    font-weight: 390;
 }
 .link{
     margin-top: 20px;

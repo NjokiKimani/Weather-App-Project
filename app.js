@@ -78,42 +78,55 @@ function search(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 
-function formatDate(dayStamp){
-let date =  new Date(dayStamp*1000);
-let day = date.getDay();
+function formatDate(dayStamp) {
+  let date = new Date(dayStamp * 1000);
+  let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
   return days[day];
-
 }
 
 function weeklyForecast(response) {
-let forecast = response.data.daily;
+  console.log(response.data);
+  let uvElement = document.querySelector(".uvValue");
+  uvElement.innerHTML = Math.ceil(response.data.current.uvi);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector(".dailyTemperatures");
-    let forecastHTML = '<div class="row">';
+  let forecastHTML = '<div class="row">';
   forecast.forEach(function (forecastDay, index) {
-    if(index <5){
+    if (index < 5) {
       forecastHTML =
         forecastHTML +
         `
           <div class="col-2">
  <div class="weekDay">${formatDate(forecastDay.dt)}</div>
-        <div class="weekTemperature">${Math.round(forecastDay.temp.day)}</div>
-        <div class="maxDayTemperature">${Math.round(forecastDay.temp.max)}</div>
-                <div class="minDayTemperature">${Math.round(
+        <div class="weekTemperature">${Math.round(forecastDay.temp.day)}°</div>
+        <span class="maxDayTemperature">H:${Math.round(
+          forecastDay.temp.max
+        )}°</span>
+                <span class="minDayTemperature">L:${Math.round(
                   forecastDay.temp.min
-                )}</div>
+                )}°</span>
           </div>    
 `;
+
     }
   });
-forecastHTML += `</div>`;
-forecastElement.innerHTML = forecastHTML;
+  forecastHTML += `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function getForecast(response) {
   console.log(response);
-let apiKey = "2ff29bed3181c3526c35cc5408037f85";
+  
+  let apiKey = "2ff29bed3181c3526c35cc5408037f85";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.lat}&lon=${response.lon}&appid=${apiKey}&units=imperial`;
   console.log(apiUrl);
   axios.get(apiUrl).then(weeklyForecast);
+
+
+}
+
+function getUVIndex(response){
+  console.log(response)
+
 }
